@@ -1,0 +1,3 @@
+from tensorflow/tensorflow:1.2.0
+RUN pip install --upgrade pip
+RUN pip install --upgrade scipy>=0.19.1 numpy>=1.13.1 networkx>=1.11 tensorflow-tensorboard

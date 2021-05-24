@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import numpy as np
 import operator
 import tensorflow as tf
@@ -19,9 +21,10 @@ def load_from_wv_format(filename):
 def save_as_wv_format(filename, data):
     with open(filename, 'w') as f:
         nums, embedding_size = data.shape
-        print(nums, embedding_size, file=f)
+        f.write(nums, embedding_size)
         for j in range(nums):
-            print(j, *data[j], file=f)
+            f.write(j, *data[j])
+        f.close()
 
 def load_embeddings(filename, file_type=None):
     #print("load embeddings ", filename)

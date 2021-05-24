@@ -7,7 +7,7 @@ import os
 #import psutil
 
 import tensorflow as tf
-from tensorflow.contrib.tensorboard.plugins import projector
+from tensorboard.plugins import projector
 
 import network, utils
 

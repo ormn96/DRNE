@@ -109,7 +109,9 @@ def get_centrality(network, type_='degree', undirected=True):
 def save_centrality(data, file_path, type_):
     if not os.path.exists(file_path):
         os.makedirs(file_path)
-    print("\n".join(map(str, data.values())), file=open(os.path.join(file_path, "{}.index".format(type_)), 'w'))
+    file=open(os.path.join(file_path, "{}.index".format(type_)), 'w')
+    file.write("\n".join(map(str, data.values())))
+    file.close()
 
 def load_centrality(file_path, type_):
     filename = os.path.join(file_path, "{}.index".format(type_))
@@ -127,9 +129,10 @@ def save_to_tsv(labels, file_path, degree_max):
         res.append(data)
     res = np.vstack(res).astype(int).T.tolist()
     with open(os.path.join(file_path, 'index.tsv'), 'w') as f:
-        print("\t".join(labels), file=f)
+        f.write("\t".join(labels))
         for data in res:
-            print("\t".join(list(map(str, data))), file=f)
+           f.write("\t".join(list(map(str, data))))
+        f.close()
     return res
 
 if __name__ == '__main__':
