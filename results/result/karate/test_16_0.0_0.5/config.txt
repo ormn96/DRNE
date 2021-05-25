@@ -1,0 +1,15 @@
+lamb 0.5
+grad_clip 5.0
+embedding_size 16
+index_from_0 True
+learning_rate 0.0025
+data_path dataset/karate.edgelist
+batch_size 8
+sampling_size 100
+seed -1
+save_path result/karate
+K 1
+alpha 0.0
+save_suffix test
+undirected True
+epochs_to_train 20
